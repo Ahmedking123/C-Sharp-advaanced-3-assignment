@@ -31,16 +31,16 @@
 
             #region 4
 
-            var items = list.Where(x => x > 90).ToList();
+            var Above90 = list.Where(x => x > 90).ToList();
 
-            items.ForEach((x) => Console.WriteLine(x + " "));
+            Above90.ForEach((x) => Console.WriteLine(x + " "));
 
             #endregion
 
             #region 5
 
-            items = list.Where(x => x < 75).ToList();
-            items.ForEach(x => Console.WriteLine(x + " "));
+            var Lower75 = list.Where(x => x < 75).ToList();
+            Lower75.ForEach(x => Console.WriteLine(x + " "));
 
             #endregion
 
@@ -58,7 +58,64 @@
 
             #region 8
 
-            var items02 = list.Select(x => $"Grade: {x}").ToList();
+            var TransfaredString = list.Select(x => $"Grade: {x}").ToList();
+
+            #endregion
+
+            #endregion
+
+
+
+            #region #2
+
+            #region 1
+
+            SortedDictionary<string, int> LeaderBoard = new();
+            //500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+            LeaderBoard.Add("Ahmed", 500);
+            LeaderBoard.Add("Sara", 200);
+            LeaderBoard.Add("Ali", 800);
+            LeaderBoard.Add("Mona", 350);
+
+            #endregion
+
+            #region 2
+
+            foreach (var item in LeaderBoard)
+            {
+                Console.WriteLine($"{item.Key} = {item.Value}");
+            }
+
+            #endregion
+
+            #region 3
+
+            var FirstScore = LeaderBoard.First();
+
+            Console.WriteLine(FirstScore.Key + " " + FirstScore.Value);
+
+            #endregion
+
+            #region 4
+
+            Console.WriteLine(LeaderBoard.Any(x => x.Value == 500));
+
+            #endregion
+
+            #region 5
+
+            var PlayerScore999 = LeaderBoard.FirstOrDefault(x => x.Value == 999);
+
+            #endregion
+
+            #region 6
+
+            LeaderBoard.Remove("Sara");
+
+            foreach (var item in LeaderBoard)
+            {
+                Console.WriteLine($"{item.Key} = {item.Value}");
+            }
 
             #endregion
 
