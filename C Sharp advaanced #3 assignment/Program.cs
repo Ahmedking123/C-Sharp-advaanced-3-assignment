@@ -120,6 +120,79 @@
             #endregion
 
             #endregion
+
+            #region #3
+
+            #region 1
+
+
+            Dictionary<string, int> PhonesBook = new() { { "Ahmed", 293942 }, { "Mohamed", 3490234 } };
+
+            #endregion
+
+            #region 2
+
+            PhonesBook["Ahmed"] = 0001100;
+            PhonesBook["Mohamed"] = 3820123;
+            PhonesBook["Ali"] = 1948192;
+            PhonesBook["Mostafa"] = 3480302;
+
+            #endregion
+
+            #region 3
+
+            try
+            {
+                PhonesBook.Add("Ahmed", 8524932);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            #endregion
+
+            #region 4
+
+            Console.WriteLine(PhonesBook.TryAdd("Khaled",39408508));
+
+            #endregion
+
+            #region 5
+
+            PhonesBook.TryGetValue("Wagdy", out var item);
+
+            if (item != default)
+            {
+                Console.WriteLine(item);
+            }
+
+            #endregion
+
+            #region 6
+
+            if (!PhonesBook.ContainsKey("Abdo")) ;
+            {
+                Console.WriteLine("Not found");
+            }
+
+            #endregion
+
+            #region 7
+
+            foreach (var t in PhonesBook.Keys)
+            {
+                Console.Write(t + " ");
+            }
+
+            foreach (var t2 in PhonesBook.Values)
+            {
+                Console.Write(t2 + " ");
+            }
+
+            #endregion
+
+            #endregion
         }
     }
 }
