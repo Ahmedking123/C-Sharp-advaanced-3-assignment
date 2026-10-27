@@ -244,12 +244,12 @@ namespace C_Sharp_advaanced__3_assignment
                 Console.WriteLine(itemUnion);
             }
 
-            foreach(var ItemIntersect in Intersect)
+            foreach (var ItemIntersect in Intersect)
             {
                 Console.WriteLine(ItemIntersect);
             }
 
-            foreach(var ItemExcept in Except)
+            foreach (var ItemExcept in Except)
             {
                 Console.WriteLine(ItemExcept);
             }
@@ -261,6 +261,55 @@ namespace C_Sharp_advaanced__3_assignment
             HashSet<int> hasSet = [1, 2];
 
             Console.WriteLine(hasSet.IsSubsetOf(A));
+
+            #endregion
+
+            #endregion
+
+            #region #5
+
+            Queue<string> queue = new();
+
+            //"Report.pdf", "Invoice.pdf", "Letter.docx", "Resume.pdf", "Photo.jpg"
+            queue.Enqueue("Report.pdf");
+            queue.Enqueue("Invoice.pdf");
+            queue.Enqueue("Letter.docx");
+            queue.Enqueue("Resume.pdf");
+            queue.Enqueue("Photo.jpg");
+
+            #region 1
+
+            Console.WriteLine(queue.Count);
+
+            foreach( var QueueItem in queue)
+            {
+                Console.WriteLine(QueueItem);
+            }
+
+            #endregion
+
+            #region 2
+
+            Console.WriteLine(queue.Peek());
+
+            #endregion
+
+            #region 3
+
+            while (queue.Count > 0)
+            {
+                Console.WriteLine($"Printing: [{queue.Dequeue()}]");
+            }
+
+            #endregion
+
+            #region 4
+
+            queue.TryDequeue(out string? dequeue);
+
+            Console.WriteLine(dequeue);
+
+            //it will output an empty item
 
             #endregion
 
