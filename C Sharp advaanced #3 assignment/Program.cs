@@ -309,7 +309,54 @@ namespace C_Sharp_advaanced__3_assignment
 
             Console.WriteLine(dequeue);
 
-            //it will output an empty item
+            //it will output a null
+
+            #endregion
+
+            #endregion
+
+            #region 6
+
+            Stack<string> stack = new();
+
+            #region 1
+
+            // "google.com", "github.com", "stackoverflow.com", "youtube.com", "claude.ai"
+            stack.Push("google.com");
+            stack.Push("github.com");
+            stack.Push("stackoverflow.com");
+            stack.Push("youtube.com");
+            stack.Push("claude.ai");
+
+            #endregion
+
+            #region 2
+
+            Console.WriteLine(stack.Peek());
+
+            #endregion
+
+            #region 3
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+
+            #endregion
+
+            #region 4
+
+            Console.WriteLine(stack.Peek());
+
+            #endregion
+
+            #region 5
+
+            Stack<int> stackEmpty = new Stack<int>();
+            stack.TryPop(out string? i);
+            Console.WriteLine(i);
+
+            //it will output a null
 
             #endregion
 
