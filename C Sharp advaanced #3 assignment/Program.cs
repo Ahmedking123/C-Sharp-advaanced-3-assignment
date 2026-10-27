@@ -1,4 +1,6 @@
-﻿namespace C_Sharp_advaanced__3_assignment
+﻿using System.Collections.Concurrent;
+
+namespace C_Sharp_advaanced__3_assignment
 {
     internal class Program
     {
@@ -81,9 +83,9 @@
 
             #region 2
 
-            foreach (var item in LeaderBoard)
+            foreach (var t3 in LeaderBoard)
             {
-                Console.WriteLine($"{item.Key} = {item.Value}");
+                Console.WriteLine($"{t3.Key} = {t3.Value}");
             }
 
             #endregion
@@ -112,9 +114,9 @@
 
             LeaderBoard.Remove("Sara");
 
-            foreach (var item in LeaderBoard)
+            foreach (var t4 in LeaderBoard)
             {
-                Console.WriteLine($"{item.Key} = {item.Value}");
+                Console.WriteLine($"{t4.Key} = {t4.Value}");
             }
 
             #endregion
@@ -154,7 +156,7 @@
 
             #region 4
 
-            Console.WriteLine(PhonesBook.TryAdd("Khaled",39408508));
+            Console.WriteLine(PhonesBook.TryAdd("Khaled", 39408508));
 
             #endregion
 
@@ -189,6 +191,76 @@
             {
                 Console.Write(t2 + " ");
             }
+
+            #endregion
+
+            #endregion
+
+            #region #4
+
+            #region 1
+
+            HashSet<string> Emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            #endregion
+
+            #region 2
+
+            // "ahmed@test.com", "AHMED@test.com", "sara@test.com", "Sara@Test.Com"
+            Emails.Add("ahmed@test.com");
+            Emails.Add("AHMED@test.com");
+            Emails.Add("sara@test.com");
+            Emails.Add("Sara@Test.Com");
+
+            #endregion
+
+            #region 3
+
+            Console.WriteLine(Emails.Count);
+            //Only 2 values since HasSet only adds unique values
+
+            #endregion
+
+            #region 4
+
+            HashSet<int> A = [1, 2, 3, 4, 5];
+            HashSet<int> B = [4, 5, 6, 7, 8];
+
+            #endregion
+
+            #region 5
+
+            HashSet<int> Union = new(A);
+            Union.UnionWith(B);
+
+            HashSet<int> Intersect = new(A);
+            Intersect.IntersectWith(B);
+
+            HashSet<int> Except = new(A);
+            Except.ExceptWith(B);
+
+            foreach (var itemUnion in Union)
+            {
+                Console.WriteLine(itemUnion);
+            }
+
+            foreach(var ItemIntersect in Intersect)
+            {
+                Console.WriteLine(ItemIntersect);
+            }
+
+            foreach(var ItemExcept in Except)
+            {
+                Console.WriteLine(ItemExcept);
+            }
+
+            #endregion
+
+            #region 6
+
+            HashSet<int> hasSet = [1, 2];
+
+            Console.WriteLine(hasSet.IsSubsetOf(A));
 
             #endregion
 
